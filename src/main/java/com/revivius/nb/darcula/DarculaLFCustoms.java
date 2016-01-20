@@ -107,7 +107,7 @@ public class DarculaLFCustoms extends LFCustoms {
             "textInactiveText", Color.GRAY, //NOI18N
             // Work around a bug in windows which sets the text area font to
             //"MonoSpaced", causing all accessible dialogs to have monospaced text
-            "TextArea.font", new GuaranteedValue("Label.font", new Font("Dialog", Font.PLAIN, fontsize)),
+            "TextArea.font", new GuaranteedValue("Label.font", controlFont),
             
             /**
              * Use calculate border color for HtmlLabelUI.
@@ -159,8 +159,11 @@ public class DarculaLFCustoms extends LFCustoms {
             "FileView.fileIcon", new ImageIcon(DarculaLFCustoms.class.getResource("file.png")),
             "FileChooser.computerIcon", new ImageIcon(DarculaLFCustoms.class.getResource("computer.png")),
             "FileChooser.hardDriveIcon", new ImageIcon(DarculaLFCustoms.class.getResource("hardDrive.png")),
-            "FileChooser.floppyDriveIcon", new ImageIcon(DarculaLFCustoms.class.getResource("floppyDrive.png"))
-                
+            "FileChooser.floppyDriveIcon", new ImageIcon(DarculaLFCustoms.class.getResource("floppyDrive.png")),
+            // https://github.com/Revivius/nb-darcula/issues/2
+            // http://docs.oracle.com/javase/7/docs/api/javax/swing/plaf/metal/DefaultMetalTheme.html
+            "swing.boldMetal", Boolean.FALSE,
+            
         };
 
         replaceSearchNotFoundColor();
